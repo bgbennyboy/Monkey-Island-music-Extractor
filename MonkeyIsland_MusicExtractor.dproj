@@ -1,0 +1,112 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{4D78DEC4-424B-4EC1-8931-037358EFF904}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>MonkeyIsland_MusicExtractor.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UsePackage>rtl;vcl;vclx;vclimg;vclactnband;dbrtl;vcldb;vcldbx;bdertl;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;vclie;inetdb;webdsnap;websnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;DbxCommonDriver;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbexpress;dbxcds;VirtualTreesD13;PngComponents;mxProtector_d12;NewAC;GR32_DSGN_RS2010;GR32_RS2010;JclDeveloperTools;Jcl;JclVcl;JclContainers;JvCore;JvSystem;JvStdCtrls;JvAppFrm;JvBands;JvDB;JvDlgs;JvBDE;JvControls;JvCmp;JvCrypt;JvCustom;JvDocking;JvDotNetCtrls;JvGlobus;JvHMI;JvJans;JvManagedThreads;JvMM;JvNet;JvPageComps;JvPascalInterpreter;JvPluginSystem;JvPrintPreview;JvRuntimeDesign;JvTimeFramework;JvWizards;JvXPCtrls;tmsd2010;VclSmp;tmsexd2010;tmsxlsd2010;tmswizd2010</DCC_UsePackage>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_DependencyCheckOutputName>MonkeyIsland_MusicExtractor.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="MonkeyIsland_MusicExtractor.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="formMain.pas">
+				<Form>frmMain</Form>
+			</DCCReference>
+			<RcItem Include="MI_Music.ini">
+				<ContainerId>ResourceItem</ContainerId>
+				<ResourceType>RCData</ResourceType>
+				<ResourceId>Mi_Music</ResourceId>
+			</RcItem>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">MonkeyIsland_MusicExtractor.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">1</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">2057</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">Quick and Easy Software</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Monkey Island Music Extractor</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.1.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName">Monkey Island Music Extractor</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright">Bgbennyboy</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename">Monkey Island Music Extractor.exe</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.1.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Ben\Documents\RAD Studio\Components\Imaging\Bin\VampyreImagingPackage.D2009.bpl">Vampyre Imaging Library Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
